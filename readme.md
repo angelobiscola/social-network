@@ -58,21 +58,4 @@ Para inicar o APP php artisan
     php artisan serve -> http://localhost:8000
     php artisan server --host "ip" --port "30" -> http://ip:port
 
-APP por Vhost apache
-
-        <VirtualHost *:80>
-            ServerName app
-            ServerAdmin admin@admin.com
-            DocumentRoot /var/www/html/app/public
-            ErrorLog ${APACHE_LOG_DIR}/error.log
-            CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-            <Directory /var/www/html/gda.app/public>
-                <IfModule mod_rewrite.c>
-                    Options -MultiViews
-                    RewriteEngine On
-                    RewriteCond %{REQUEST_FILENAME} !-f
-                    RewriteRule ^ index.php [L]
-                </IfModule>
-            </Directory>
-        </VirtualHost>
+[Configure Apache Vhost](https://github.com/angelo-ti/install-dependencies/blob/master/apache-vhost.md)
