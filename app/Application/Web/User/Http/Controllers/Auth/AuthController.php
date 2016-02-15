@@ -43,4 +43,17 @@ class AuthController extends Controller
             'password'  => bcrypt($data['password']),
         ]);
     }
+
+    public function verify($username, $password)
+    {
+        $credentials = [
+            'email'    => $username,
+            'password' => $password,
+        ];
+
+        if (\Auth::guard($this->guard)->once($credentials)) {
+            return \Auth::guard($this->guard)->user()->id;
+        }
+        return false;
+    }
 }
