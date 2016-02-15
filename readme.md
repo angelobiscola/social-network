@@ -4,7 +4,7 @@
 
 #### 1 - Dependências do Projeto
 
-Requisitos help -> [link](https://github.com/angelo-ti/install-dependencies)
+[Requisitos help](https://github.com/angelo-ti/install-dependencies)
 
     php 5.5.9+
     composer
