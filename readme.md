@@ -15,7 +15,7 @@ Requisitos help -> https://github.com/angelo-ti/dependencias
 
 #### 2 - Instalacao
 
-#### 1 - Dependências do Frontend
+##### 1 - Dependências do Frontend
 
 Após instalar Requisitos, na raiz do projeto, execute o seguinte comando:
 
@@ -29,19 +29,19 @@ No diretorio "Public",só instalar as dependências do bower
 
     bower install -allow-root
 
-#### 2 - Dependências do Projeto
+##### 2 - Dependências do Projeto
 
 Para instalar as dependências do projeto, execute o seguinte comando:
 
     composer install
 
-#### 3 - Migrações
+##### 3 - Migrações
 
 Para criar as tabelas necessárias, basta rodar o comando:
 
     php artisan migrate
 
-#### 4 - Assets
+##### 4 - Assets
 
 Precismos instalar o gulp, execute o seguinte comando
 
@@ -51,7 +51,7 @@ Para gerar os arquivos compilados do frontend, você pode fazer isso com o coman
 
     gulp
 
-#### 5 - Server Start
+##### 5 - Server Start
 
 Para inicar o APP php artisan
 
