@@ -8,7 +8,7 @@ class AdminServiceProvider extends ServiceProvider
 {
 
     protected $namespace = 'App\Application\Web\Admin\Http\Controllers';
-    protected $path      = 'Application/Web/Admin/Http/Routes/routes.php';
+    protected $path      = 'Application/Web/Admin/Http/Routes/';
     protected $prefix    = 'admin';
 
 
@@ -23,7 +23,13 @@ class AdminServiceProvider extends ServiceProvider
     {
         $router->group(['namespace' => $this->namespace, 'prefix' => $this->prefix,'as' => $this->prefix.'.', 'middleware' => ['web'] ], function ($router) {
 
-            require app_path($this->path);
+            require app_path($this->path.'routes.php');
+
+            $router->group(['namespace' => 'Client', 'prefix' => 'clients', 'as' => 'client.', 'middleware' => ['auth:'.$this->prefix]], function($router)
+            {
+                require app_path($this->path.'clients.php');
+            });
+
 
         });
     }
